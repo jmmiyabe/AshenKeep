@@ -52,6 +52,6 @@ Route::middleware([
 
     // Applicant dashboard route
     Route::get('/applicant/dashboard', function () {
-        return view('applicant.dashboard');
+        return view('applicant-dashboard');
     })->name('applicant.dashboard');
 });
