@@ -20,49 +20,38 @@ Route::middleware([
         $user = Auth::user();
 
         if ($user->hasRole('Admin')) {
-            return redirect()->route('admin');
+            return redirect()->route('admin.dashboard');
         }
 
         if ($user->hasRole('office staff')) {
-            return redirect()->route('office.dashboard');
+            return redirect()->route('office-staff.dashboard');
         }
 
         if ($user->hasRole('finance staff')) {
-            return redirect()->route('finance.dashboard');
+            return redirect()->route('finance-staff.dashboard');
         }
 
         // Default to applicant dashboard
-        return redirect()->route('dashboard');
+        return redirect()->route('applicant.dashboard');
     })->name('dashboard');
 
     // Admin dashboard route
     Route::get('/admin/dashboard', function () {
         return view('admin-dashboard');
-    })->name('admin');
+    })->name('admin.dashboard');
 
     // Office staff dashboard route
     Route::get('/office/dashboard', function () {
         return view('office.dashboard');
-    })->name('office.dashboard');
+    })->name('office-staff.dashboard');
 
     // Finance staff dashboard route
     Route::get('/finance/dashboard', function () {
         return view('finance.dashboard');
-    })->name('finance.dashboard');
+    })->name('finance-staff.dashboard');
 
     // Applicant dashboard route
     Route::get('/applicant/dashboard', function () {
         return view('applicant.dashboard');
     })->name('applicant.dashboard');
-});
-
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/permissions', function () {
-        return view('permissions');
-    })->name('permissions');
 });
