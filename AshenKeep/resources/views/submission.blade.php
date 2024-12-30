@@ -80,7 +80,7 @@
 
                 <div class="mb-4">
                     <x-label for="file" value="{{ __('Attach a File') }}" class="text-white" />
-                    <x-input id="file" class="block mt-1 w-full border border-yellow-300 rounded-lg" type="file" name="file" :value="old('file')"/>
+                    <x-input id="file" class="block mt-1 w-full border border-yellow-300 rounded-lg" type="file" name="file" :value="old('file')" multiple/>
                 </div>    
             </form>
             <x-apply-button href="{{ route('login') }}" class="bg-yellow-600 text-white text-start w-4 py-3 rounded mb-4 flex items-start justify-start gap-2 hover:bg-yellow-700">
