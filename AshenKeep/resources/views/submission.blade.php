@@ -69,7 +69,7 @@
                 </div>
             </div>
         </div>
-        <div class="absolute inset-0 h-25 mt-40 max-w-xl mx-auto bg-blue-900 p-6 rounded items-center">
+        <div class="absolute inset-0 h-25 mt-60 max-w-xl mx-auto bg-blue-900 p-6 rounded items-center">
             <h2 class="text-2xl font-semibold mb-6 text-white">Sumbit Your Requirements</h2>
             <form id="requirementsForm" method="POST" enctype="multipart/form-data" aciton="{{ route('submission') }}">
                 @csrf 
