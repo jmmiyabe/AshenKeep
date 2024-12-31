@@ -68,9 +68,9 @@
                 </div>
             
             <!-- Blue Table -->
-             <div class="bg-blue-900 text-white rounded-lg p-6 w-3/4 ml-auto mr-20">
+             <div class="max-h-97 overflow-auto border border-gray-300 bg-blue-900 text-white rounded-lg p-6 w-3/4 ml-auto mr-20">
                 <h3 class="text-2xl font-semibold mb-6 text-white">Requirements</h3>
-                <table class="table-fixed w-full text-center border-collapse border-separate border-spacing-y-2 rounded-md overflow-hidden">
+                <table class="table-fixed w-full divide-y divide-gray-200 text-center border-collapse border-separate border-spacing-y-2 rounded-md overflow-hidden">
                     <thead class="bg-blue-900">
                         <tr>
                             <th class="p-3">ID</th>
@@ -146,6 +146,79 @@
                             <td class="p-6"></td>
                             <td class="p-6"></td>
                         </tr>
+                        <tr class="bg-yellow-500 text-white">
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                        </tr>
+                        <tr class="bg-yellow-500 text-white">
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                        </tr>
+                        <tr class="bg-yellow-500 text-white">
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                        </tr>
+                        <tr class="bg-yellow-500 text-white">
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                        </tr>
+                        <tr class="bg-yellow-500 text-white">
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                        </tr>
+                        <tr class="bg-yellow-500 text-white">
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                        </tr>
+                        <tr class="bg-yellow-500 text-white">
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                        </tr>
+                        <tr class="bg-yellow-500 text-white">
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                            <td class="p-6"></td>
+                        </tr>
+                        
                         
                     </tbody>
                 </table>
