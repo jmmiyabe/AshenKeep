@@ -82,7 +82,7 @@
                             <th class="p-3">Status</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="auto-rows-auto">
                         <tr class="bg-yellow-500 text-white">
                             <td class="p-6"></td>
                             <td class="p-6"></td>
