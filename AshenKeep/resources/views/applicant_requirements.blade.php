@@ -39,193 +39,201 @@
                     </div>
                 </nav>
             </header>
-
-        <!-- Main Container -->
-        <div class="min-h-screen flex items-center px-8">
-            <!-- Side Bar -->
-            <div class="flex">
-                <div class="relative w-50 p-6 shadow-2xl" style="background-color: #C28E21; height: 500px; border-top-right-radius: 6rem; border-bottom-right-radius: 6rem;">
-                    <div class="flex flex-col items-center space-y-11">
-                    <a href="{{ url('/applicant_requirements') }}" class="block text-black hover:text-gray-200 font-medium mt-8">
-                        <div class="flex flex-col items-center">
-                            <img src="img/view_requirements_icon.svg" class="h-20 w-20 mb-2 transition duration-300 transform hover:scale-110">
-                            <span>View Requirements</span>
-                        </div>
-                    </a>
-                    <a href="{{ url('/submission') }}" class="block text-black hover:text-gray-200 font-medium">
-                        <div class="flex flex-col items-center">
-                            <img src="img/requirements_upload.svg" class="h-16 w-16 mb-2 transition duration-300 transform hover:scale-110">
-                            <span>Submission</span>
-                        </div>
-                    </a>
-                    <a href="/dashboard" class="block text-black hover:text-gray-200 font-medium">
-                        <div class="flex flex-col items-center">
-                            <img src="img/logout_icon.svg" class="h-16 w-16 mb-2 transition duration-300 transform hover:scale-110">
-                            <span>Logout</span>
-                        </div>
-                    </a>
-                        </div>
+            <form class="max-w-md mx-auto mb-4">
+                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-black dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                        </svg>
+                    </div>
+                    <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-black border border-black rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." required />
+                    <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                 </div>
-            
-            <!-- Blue Table -->
-             <div class="max-h-97 overflow-auto border border-gray-300 bg-blue-900 text-white rounded-lg p-6 w-3/4 ml-auto mr-20">
-                <h3 class="text-2xl font-semibold mb-6 text-white">Requirements</h3>
-                <table class="table-fixed w-full divide-y divide-gray-200 text-center border-collapse border-separate border-spacing-y-2 rounded-md overflow-hidden">
-                    <thead class="bg-blue-900">
-                        <tr>
-                            <th class="p-3">ID</th>
-                            <th class="p-3">Name</th>
-                            <th class="p-3">Type</th>
-                            <th class="p-3">Format</th>
-                            <th class="p-3">Date</th>
-                            <th class="p-3">Time</th>
-                            <th class="p-3">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody class="auto-rows-auto">
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        <tr class="bg-yellow-500 text-white">
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                            <td class="p-6"></td>
-                        </tr>
-                        
-                        
-                    </tbody>
-                </table>
-            </div>
-        </div>
+            </form>
+            <!-- Main Container -->
+            <div class="min-h-screen flex items-center px-8">
+                <!-- Side Bar -->
+                <div class="flex">
+                    <div class="relative w-50 p-6 shadow-2xl" style="background-color: #C28E21; height: 500px; border-top-right-radius: 6rem; border-bottom-right-radius: 6rem;">
+                        <div class="flex flex-col items-center space-y-11">
+                            <a href="{{ url('/applicant_requirements') }}" class="block text-black hover:text-gray-200 font-medium mt-8">
+                                <div class="flex flex-col items-center">
+                                    <img src="img/view_requirements_icon.svg" class="h-20 w-20 mb-2 transition duration-300 transform hover:scale-110">
+                                    <span>View Requirements</span>
+                                </div>
+                            </a>
+                            <a href="{{ url('/submission') }}" class="block text-black hover:text-gray-200 font-medium">
+                                <div class="flex flex-col items-center">
+                                    <img src="img/requirements_upload.svg" class="h-16 w-16 mb-2 transition duration-300 transform hover:scale-110">
+                                    <span>Submission</span>
+                                </div>
+                            </a>
+                            <a href="/dashboard" class="block text-black hover:text-gray-200 font-medium">
+                                <div class="flex flex-col items-center">
+                                    <img src="img/logout_icon.svg" class="h-16 w-16 mb-2 transition duration-300 transform hover:scale-110">
+                                    <span>Logout</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
 
-
-        
+                    <!-- Blue Table -->
+                     <div class="max-h-97 overflow-auto border border-gray-300 bg-blue-900 text-white rounded-lg p-6 w-3/4 ml-auto mr-20">
+                        <h3 class="text-2xl font-semibold mb-6 text-white">Requirements</h3>
+                        <table class="table-fixed w-full divide-y divide-gray-200 text-center border-collapse border-separate border-spacing-y-2 rounded-md overflow-hidden">
+                            <thead class="bg-blue-900">
+                                <tr>
+                                    <th class="p-3">ID</th>
+                                    <th class="p-3">Name</th>
+                                    <th class="p-3">Type</th>
+                                    <th class="p-3">Format</th>
+                                    <th class="p-3">Date</th>
+                                    <th class="p-3">Time</th>
+                                    <th class="p-3">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="auto-rows-auto">
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                <tr class="bg-yellow-500 text-white">
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                    <td class="p-6"></td>
+                                </tr>
+                                
+                                
+                            </tbody>
+                        </table>
+                    </div>
+             </div>        
 </body>
 </html>
