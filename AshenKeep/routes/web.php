@@ -23,11 +23,11 @@ Route::middleware([
             return redirect()->route('admin.dashboard');
         }
 
-        if ($user->hasRole('office staff')) {
+        if ($user->hasRole('Office Staff')) {
             return redirect()->route('office-staff.dashboard');
         }
 
-        if ($user->hasRole('finance staff')) {
+        if ($user->hasRole('Finance Staff')) {
             return redirect()->route('finance-staff.dashboard');
         }
 
@@ -42,12 +42,12 @@ Route::middleware([
 
     // Office staff dashboard route
     Route::get('/office/dashboard', function () {
-        return view('office.dashboard');
+        return view('office-staff-dashboard');
     })->name('office-staff.dashboard');
 
     // Finance staff dashboard route
     Route::get('/finance/dashboard', function () {
-        return view('finance.dashboard');
+        return view('finance-staff-dashboard');
     })->name('finance-staff.dashboard');
 
     // Applicant dashboard route
