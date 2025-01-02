@@ -10,9 +10,8 @@
         <div class="hidden sm:flex">
             <x-dashboard-side-bar />
         </div>
-
         <!-- Main Content -->
-        <div class="max-h-97 overflow-auto border border-gray-300 bg-blue-900 text-white rounded-lg p-6 w-3/4 ml-auto mr-20">
+         <div class="max-h-96 overflow-auto border border-black bg-blue-900 text-white rounded-lg p-6 w-3/4 ml-auto mr-[100px]">
             <h3 class="text-2xl font-semibold mb-6 text-white">Requirements</h3>
             <table class="table-fixed w-full divide-y divide-gray-200 text-center border-collapse border-separate border-spacing-y-2 rounded-md overflow-hidden">
                 <thead class="bg-blue-900">
@@ -27,7 +26,7 @@
                     </tr>
                 </thead>
                 <tbody class="auto-rows-auto">
-                    <tr class="bg-yellow-500 text-white">
+                    <tr class="bg-white text-black">
                         <td class="p-6"></td>
                         <td class="p-6"></td>
                         <td class="p-6"></td>
@@ -36,7 +35,7 @@
                         <td class="p-6"></td>
                         <td class="p-6"></td>
                     </tr>
-                    <tr class="bg-yellow-500 text-white">
+                    <tr class="bg-white text-black">
                         <td class="p-6"></td>
                         <td class="p-6"></td>
                         <td class="p-6"></td>
@@ -45,7 +44,7 @@
                         <td class="p-6"></td>
                         <td class="p-6"></td>
                     </tr>
-                    <tr class="bg-yellow-500 text-white">
+                    <tr class="bg-white text-black">
                         <td class="p-6"></td>
                         <td class="p-6"></td>
                         <td class="p-6"></td>
@@ -54,7 +53,7 @@
                         <td class="p-6"></td>
                         <td class="p-6"></td>
                     </tr>
-                    <tr class="bg-yellow-500 text-white">
+                    <tr class="bg-white text-black">
                         <td class="p-6"></td>
                         <td class="p-6"></td>
                         <td class="p-6"></td>
@@ -63,7 +62,7 @@
                         <td class="p-6"></td>
                         <td class="p-6"></td>
                     </tr>
-                    <tr class="bg-yellow-500 text-white">
+                    <tr class="bg-white text-black">
                         <td class="p-6"></td>
                         <td class="p-6"></td>
                         <td class="p-6"></td>
@@ -72,7 +71,7 @@
                         <td class="p-6"></td>
                         <td class="p-6"></td>
                     </tr>
-                    <tr class="bg-yellow-500 text-white">
+                    <tr class="bg-white text-black">
                         <td class="p-6"></td>
                         <td class="p-6"></td>
                         <td class="p-6"></td>
@@ -81,7 +80,7 @@
                         <td class="p-6"></td>
                         <td class="p-6"></td>
                     </tr>
-                    <tr class="bg-yellow-500 text-white">
+                    <tr class="bg-white text-black">
                         <td class="p-6"></td>
                         <td class="p-6"></td>
                         <td class="p-6"></td>
@@ -89,105 +88,9 @@
                         <td class="p-6"></td>
                         <td class="p-6"></td>
                         <td class="p-6"></td>
-                    </tr>
-                    <tr class="bg-yellow-500 text-white">
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                    </tr>
-                    <tr class="bg-yellow-500 text-white">
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                    </tr>
-                    <tr class="bg-yellow-500 text-white">
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                    </tr>
-                    <tr class="bg-yellow-500 text-white">
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                    </tr>
-                    <tr class="bg-yellow-500 text-white">
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                    </tr>
-                    <tr class="bg-yellow-500 text-white">
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                    </tr>
-                    <tr class="bg-yellow-500 text-white">
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                    </tr>
-                    <tr class="bg-yellow-500 text-white">
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                        <td class="p-6"></td>
-                    </tr>
+                    </tr>  
                 </tbody>
             </table>
-        </div>    
-    </div>
+        </div>
+    </div>  
 </x-app-layout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-                    
-                     
-             </div>        
-</body>
-</html>
