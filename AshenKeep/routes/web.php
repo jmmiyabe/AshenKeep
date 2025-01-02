@@ -11,14 +11,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/applicant_requirements', function () {
-    return view('applicant_requirements'); 
-})->name('applicant_requirements');
-
-Route::get('/submission', function () {
-    return view('submission'); 
-})->name('submission');
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
