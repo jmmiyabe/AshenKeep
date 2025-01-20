@@ -46,4 +46,24 @@ class RequirementController extends Controller
 
         return redirect()->route('applicant_requirements')->with('success', 'Requirement submitted successfully.');
     }
+
+    //Display submitted requirements for Officestaff
+    public function viewOfficeRequirements()
+    {
+        $requirements = Requirement::where('status', 'pending')->get();
+        return view('officestaff_requirements', compact('requirements'));
+    }
+
+    //Update status of a requirements
+    public function updateStatus(Request $request, $id)
+    {
+        $request->validate([
+            'status' => 'required|in:approved,rejected',
+        ]);
+
+        $requirement = Requirement::findOrFail($id);
+        $requirement->update(['status' => $request->status]);
+
+        return redirect()->route('officestaff_requirements')->with('success', 'Requirement status updated successfully.');
+    }
 }

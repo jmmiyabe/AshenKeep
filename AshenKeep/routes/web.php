@@ -163,4 +163,6 @@ Route::get('/apply/success', [ApplicantController::class, 'success'])->name('app
 Route::get('/applicants', [ApplicantController::class, 'index'])->name('applicant.index');
 
 Route::get('/applicant/requirements', [RequirementController::class, 'index'])->name('applicant_requirements');
+Route::get('/officestaff/requirements', [RequirementController::class,'viewOfficeRequirements'])->name('officestaff_requirements');
 Route::post('/applicant/submission', [RequirementController::class, 'store'])->name('submission_requirements');
+Route::post('/officestaff/requirements/{id}/status', [RequirementController::class, 'updateStatus'])->name('updateStatus');
