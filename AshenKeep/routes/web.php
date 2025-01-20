@@ -165,4 +165,4 @@ Route::get('/applicants', [ApplicantController::class, 'index'])->name('applican
 Route::get('/applicant/requirements', [RequirementController::class, 'index'])->name('applicant_requirements');
 Route::get('/officestaff/requirements', [RequirementController::class,'viewOfficeRequirements'])->name('officestaff_requirements');
 Route::post('/applicant/submission', [RequirementController::class, 'store'])->name('submission_requirements');
-Route::post('/officestaff/requirements/{id}/status', [RequirementController::class, 'updateStatus'])->name('updateStatus');
+Route::post('/officestaff/requirements/batch-update', [RequirementController::class, 'batchUpdateStatus'])->name('batch_update_status');

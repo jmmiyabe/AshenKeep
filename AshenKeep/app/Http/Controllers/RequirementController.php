@@ -50,8 +50,12 @@ class RequirementController extends Controller
     //Display submitted requirements for Officestaff
     public function viewOfficeRequirements()
     {
-        $requirements = Requirement::where('status', 'pending')->get();
-        return view('officestaff_requirements', compact('requirements'));
+        // Group requirements by applicant name
+        $groupedRequirements = Requirement::where('status', 'pending')
+        ->get()
+        ->groupBy('name');
+
+        return view('officestaff_requirements', compact('groupedRequirements'));
     }
 
     //Update status of a requirements
@@ -65,5 +69,21 @@ class RequirementController extends Controller
         $requirement->update(['status' => $request->status]);
 
         return redirect()->route('officestaff_requirements')->with('success', 'Requirement status updated successfully.');
+    }
+
+    public function batchUpdateStatus(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'status' => 'required|in:approved,rejected',
+        ]);
+
+        // Update all requirements for the specified applicant
+        Requirement::where('name', $request->name)
+            ->where('status', 'pending')
+            ->update(['status' => $request->status]);
+
+        return redirect()->route('officestaff_requirements')
+            ->with('success', "All requirements for {$request->name} have been {$request->status}.");
     }
 }
