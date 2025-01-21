@@ -28,40 +28,41 @@
                                 </div>
                             @endif
 
-                            <!-- Table -->
-                            <table class="table-auto w-full border-collapse border border-gray-200">
-                                <thead class="bg-gray-100">
-                                    <tr>
-                                        <th class="border border-gray-300 px-4 py-2">ID</th>
-                                        <th class="border border-gray-300 px-4 py-2">Name</th>
-                                        <th class="border border-gray-300 px-4 py-2">Type</th>
-                                        <th class="border border-gray-300 px-4 py-2">Files</th>
-                                        <th class="border border-gray-300 px-4 py-2">Status</th>
-                                        <th class="border border-gray-300 px-4 py-2">Submitted At</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse($requirements as $requirement)
-                                        <tr>
-                                            <td class="border border-gray-300 px-4 py-2">{{ $requirement->id }}</td>
-                                            <td class="border border-gray-300 px-4 py-2">{{ $requirement->name }}</td>
-                                            <td class="border border-gray-300 px-4 py-2">{{ ucfirst($requirement->requirement_type) }}</td>
-                                            <td class="border border-gray-300 px-4 py-2">
-                                                @foreach($requirement->files as $file)
-                                                    <a href="{{ Storage::url($file) }}" target="_blank" class="text-blue-500 underline">View File</a><br>
+                            <!-- Loop through grouped requirements -->
+                            @forelse($groupedRequirements as $name => $requirements)
+                                <div class="mb-6">
+                                        <h4 class="text-xl font-bold text-white">Applicant: {{ $name }}</h4>
+                                        <table class="table-auto w-full border-collapse border border-gray-200 mt-4">
+                                            <thead class="bg-gray-100">
+                                                <tr>
+                                                    <th class="border border-gray-300 px-4 py-2">ID</th>
+                                                    <th class="border border-gray-300 px-4 py-2">Type</th>
+                                                    <th class="border border-gray-300 px-4 py-2">Files</th>
+                                                    <th class="border border-gray-300 px-4 py-2">Status</th>
+                                                    <th class="border border-gray-300 px-4 py-2">Submitted At</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($requirements as $requirement)
+                                                    <tr>
+                                                        <td class="border border-gray-300 px-4 py-2">{{ $requirement->id }}</td>
+                                                        <td class="border border-gray-300 px-4 py-2">{{ ucfirst($requirement->requirement_type) }}</td>
+                                                        <td class="border border-gray-300 px-4 py-2">
+                                                            @foreach($requirement->files as $file)
+                                                                <a href="{{ Storage::url($file) }}" target="_blank" class="text-blue-500 underline">View File</a><br>
+                                                            @endforeach
+                                                        </td>
+                                                        <td class="border border-gray-300 px-4 py-2">{{ ucfirst($requirement->status) }}</td>
+                                                        <td class="border border-gray-300 px-4 py-2">{{ $requirement->created_at->format('Y-m-d H:i') }}</td>
+                                                    </tr>
                                                 @endforeach
-                                            </td>
-                                            <td class="border border-gray-300 px-4 py-2">{{ ucfirst($requirement->status) }}</td>
-                                            <td class="border border-gray-300 px-4 py-2">{{ $requirement->created_at->format('Y-m-d H:i') }}</td>
-                                        </tr>
-                                    @empty
-                                        <tr>
-                                            <td colspan="6" class="border border-gray-300 px-4 py-2 text-center">No requirements submitted yet.</td>
-                                        </tr>
-                                    @endforelse
-                                </tbody>
-                            </table>
-                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                @empty
+                                    <p class="text-center text-white">No requirements submitted yet.</p>
+                                @endforelse
+
                         </div>
                     </div>
                 </div>

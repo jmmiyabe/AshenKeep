@@ -14,8 +14,10 @@ class RequirementController extends Controller
      */
     public function index()
     {
-        $requirements = Requirement::all();
-        return view('applicant_requirements', compact('requirements'));
+         // Group requirements by applicant name
+        $groupedRequirements = Requirement::all()->groupBy('name');
+
+        return view('applicant_requirements', compact('groupedRequirements'));
     }
 
     /**
