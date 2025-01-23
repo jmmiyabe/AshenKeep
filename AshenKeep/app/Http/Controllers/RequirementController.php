@@ -88,4 +88,32 @@ class RequirementController extends Controller
         return redirect()->route('officestaff_requirements')
             ->with('success', "All requirements for {$request->name} have been {$request->status}.");
     }
+
+    //Admin requirements
+    public function viewAdminRequirements()
+    {
+        $groupedRequirements = Requirement::where('status', 'approved')
+        ->get()
+        ->groupBy('name');
+
+        return view('admin_requirements', compact('groupedRequirements'));
+    }
+
+    public function issueProofOwnership(Request $request, $applicantName)
+    {
+        $requirements = Requirement::where('name', $applicantName)
+            ->where('status', 'approved')
+            ->get();
+
+        if ($requirements->isEmpty()) {
+            return redirect()->route('admin_requirements')->with('error', 'No approved requirements found.');
+        }   
+
+        // Update the status to 'ownership_issued'
+        Requirement::where('name', $applicantName)
+            ->where('status', 'approved')
+            ->update(['status' => 'ownership_issued']);
+
+        return redirect()->route('admin_requirements')->with('success', 'Proof of ownership issued successfully.');
+    }
 }
