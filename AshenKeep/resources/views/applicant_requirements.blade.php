@@ -30,13 +30,16 @@
 
                             <!-- Loop through grouped requirements -->
                             @forelse($groupedRequirements as $name => $requirements)
-                                <div class="mb-6">
-                                        <h4 class="text-xl font-bold text-white">Applicant: {{ $name }}</h4>
-                                        <table class="table-auto w-full border-collapse border border-gray-200 mt-4">
-                                            <thead class="bg-gray-100">
+                                <div class="mb-6" x-data="{ open: false }">
+                                    <button @click="open = !open" class="text-xl font-bold text-white bg-gray-700 p-2 rounded w-full text-left">
+                                        {{ $name }}
+                                    </button>
+                                    <div x-show="open" class="mt-4">
+                                        <table id="table-{{ Str::slug($name) }}" class="table-auto w-full border-collapse border border-gray-200">
+                                            <thead class="bg-gray-100 text-black">
                                                 <tr>
                                                     <th class="border border-gray-300 px-4 py-2">ID</th>
-                                                    <th class="border border-gray-300 px-4 py-2">Type</th>
+                                                    <th class="border border-gray-300 px-4 py-2">Requirement Type</th>
                                                     <th class="border border-gray-300 px-4 py-2">Files</th>
                                                     <th class="border border-gray-300 px-4 py-2">Status</th>
                                                     <th class="border border-gray-300 px-4 py-2">Submitted At</th>
@@ -59,9 +62,10 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                @empty
-                                    <p class="text-center text-white">No requirements submitted yet.</p>
-                                @endforelse
+                                </div>
+                            @empty
+                                <p class="text-center text-white">No requirements submitted yet.</p>
+                            @endforelse
 
                         </div>
                     </div>
