@@ -16,7 +16,8 @@
                     <option value="" disabled selected>Select Requirement Type</option>
                     <option value="baptism">Baptism</option>
                     <option value="id">ID</option>
-                    <option value="certificate">Certificate</option>
+                    <option value="certificate">Donation</option>
+                    <option value="certificate">Other</option>
                 </select>
             </div>
 

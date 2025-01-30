@@ -46,14 +46,20 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($requirements as $requirement)
+                                                @foreach($requirements as $index => $requirement)
                                                     <tr>
-                                                        <td class="border border-gray-300 px-4 py-2">{{ $requirement->id }}</td>
+                                                        @if($index === 0)
+                                                            <td class="border border-gray-300 px-4 py-2" rowspan="{{ count($requirements) }}">
+                                                                {{ $requirement->id }}
+                                                            </td>
+                                                        @endif
                                                         <td class="border border-gray-300 px-4 py-2">{{ ucfirst($requirement->requirement_type) }}</td>
                                                         <td class="border border-gray-300 px-4 py-2">
-                                                            @foreach($requirement->files as $file)
-                                                                <a href="{{ Storage::url($file) }}" target="_blank" class="text-blue-500 underline">View File</a><br>
-                                                            @endforeach
+                                                            @if(is_array($requirement->files))
+                                                                @foreach($requirement->files as $file)
+                                                                    <a href="{{ Storage::url($file) }}" target="_blank" class="text-blue-500 underline">View File</a><br>
+                                                                @endforeach
+                                                            @endif
                                                         </td>
                                                         <td class="border border-gray-300 px-4 py-2">{{ ucfirst($requirement->status) }}</td>
                                                         <td class="border border-gray-300 px-4 py-2">{{ $requirement->created_at->format('Y-m-d H:i') }}</td>
@@ -66,7 +72,6 @@
                             @empty
                                 <p class="text-center text-white">No requirements submitted yet.</p>
                             @endforelse
-
                         </div>
                     </div>
                 </div>
