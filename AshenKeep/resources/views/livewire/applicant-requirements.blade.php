@@ -25,13 +25,19 @@
                         <div class="mb-6" x-data="{ open: false }">
                             <button @click="open = !open" class="text-lg font-semibold text-white bg-gray-700 hover:bg-gray-600 transition duration-300 p-3 rounded-lg w-full text-left shadow-md flex justify-between items-center">
                                 <span>{{ $name }}</span>
-                                <svg x-show="!open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                                <svg x-show="open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
-                                </svg>
+                                <div class="flex items-center gap-x-3">
+                                    <span class="font-semibold {{ $requirements->first()->status === 'approved' ? 'text-green-400' : 'text-red-400' }}">
+                                        {{ ucfirst($requirements->first()->status) }}
+                                    </span>
+                                    <svg x-show="!open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                    <svg x-show="open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                                    </svg>
+                                </div>
                             </button>
+                            
                             <div x-show="open" class="mt-4 border border-gray-500 rounded-lg overflow-hidden shadow-md">
                                 <table id="table-{{ Str::slug($name) }}" class="table-auto w-full border-collapse">
                                     <thead class="bg-gray-800 text-white">
@@ -39,7 +45,6 @@
                                             <th class="border border-gray-600 px-4 py-3">ID</th>
                                             <th class="border border-gray-600 px-4 py-3">Requirement Type</th>
                                             <th class="border border-gray-600 px-4 py-3">Files</th>
-                                            <th class="border border-gray-600 px-4 py-3">Status</th>
                                             <th class="border border-gray-600 px-4 py-3">Submitted At</th>
                                         </tr>
                                     </thead>
@@ -58,9 +63,6 @@
                                                             <a href="{{ Storage::url($file) }}" target="_blank" class="text-blue-400 hover:text-blue-300 underline transition duration-200">View File</a><br>
                                                         @endforeach
                                                     @endif
-                                                </td>
-                                                <td class="border border-gray-600 px-4 py-3 font-semibold {{ $requirement->status === 'approved' ? 'text-green-400' : 'text-red-400' }}">
-                                                    {{ ucfirst($requirement->status) }}
                                                 </td>
                                                 <td class="border border-gray-600 px-4 py-3">{{ $requirement->created_at->format('Y-m-d H:i') }}</td>
                                             </tr>
