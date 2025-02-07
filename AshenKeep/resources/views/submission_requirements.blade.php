@@ -14,10 +14,9 @@
                 <label for="requirement_type" class="block text-gray-700">Requirement Type</label>
                 <select name="requirement_type" id="requirement_type" class="w-full border border-gray-300 rounded px-3 py-2" required>
                     <option value="" disabled selected>Select Requirement Type</option>
-                    <option value="baptism">Baptism</option>
-                    <option value="id">ID</option>
-                    <option value="certificate">Donation</option>
-                    <option value="certificate">Other</option>
+                    <option value="Baptism">Baptism</option>
+                    <option value="PSA">PSA</option>
+                    <option value="other">Other</option>
                 </select>
             </div>
 
