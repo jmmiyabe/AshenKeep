@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('requirements', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->foreign('full_name')->references('full_name')->on('applications');
             $table->string('requirement_type');
             $table->json('files')->nullable(); // Store file paths as a JSON array
             $table->string('status')->default('pending'); // Initial status as 'pending'

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Requirement extends Model
 {
     protected $table = 'requirements';
-    protected $fillable = ['name', 'requirement_type', 'files', 'status'];
+    protected $fillable = ['full_name', 'requirement_type', 'files', 'status'];
 
     protected $casts = [
         'files' => 'array', // Automatically cast 'files' to an array

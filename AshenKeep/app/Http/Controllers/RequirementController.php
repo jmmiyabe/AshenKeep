@@ -14,8 +14,8 @@ class RequirementController extends Controller
      */
     public function index()
     {
-         // Group requirements by applicant name
-        $groupedRequirements = Requirement::all()->groupBy('name');
+        // Group requirements by applicant name
+        $groupedRequirements = Requirement::all()->groupBy('full_name');
 
         return view('applicant_requirements', compact('groupedRequirements'));
     }
@@ -26,9 +26,9 @@ class RequirementController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'full_name' => 'required|string|max:255',
             'requirement_type' => 'required|string',
-            'files' => 'required|array|max:5', // Maximum 5 files
+            'files' => 'required|array|max:10', // Maximum 10 files
             'files.*' => 'file|mimes:jpeg,png,gif,pdf,doc,docx|max:5120', // 5MB max per file
         ]);
 
@@ -40,7 +40,7 @@ class RequirementController extends Controller
 
         // Save to the database
         Requirement::create([
-            'name' => $request->name,
+            'full_name' => $request->full_name,
             'requirement_type' => $request->requirement_type,
             'files' => $filePaths,
             'status' => 'pending',
@@ -55,7 +55,7 @@ class RequirementController extends Controller
         // Group requirements by applicant name
         $groupedRequirements = Requirement::where('status', 'pending')
         ->get()
-        ->groupBy('name');
+        ->groupBy('full_name');
 
         return view('officestaff_requirements', compact('groupedRequirements'));
     }
@@ -76,17 +76,17 @@ class RequirementController extends Controller
     public function batchUpdateStatus(Request $request)
     {
         $request->validate([
-            'name' => 'required|string',
+            'full_name' => 'required|string',
             'status' => 'required|in:approved,rejected',
         ]);
 
         // Update all requirements for the specified applicant
-        Requirement::where('name', $request->name)
+        Requirement::where('full_name', $request->full_name)
             ->where('status', 'pending')
             ->update(['status' => $request->status]);
 
         return redirect()->route('officestaff_requirements')
-            ->with('success', "All requirements for {$request->name} have been {$request->status}.");
+            ->with('success', "All requirements for {$request->full_name} have been {$request->status}.");
     }
 
     //Admin requirements
@@ -94,14 +94,14 @@ class RequirementController extends Controller
     {
         $groupedRequirements = Requirement::where('status', 'approved')
         ->get()
-        ->groupBy('name');
+        ->groupBy('full_name');
 
         return view('admin_requirements', compact('groupedRequirements'));
     }
 
     public function issueProofOwnership(Request $request, $applicantName)
     {
-        $requirements = Requirement::where('name', $applicantName)
+        $requirements = Requirement::where('full_name', $applicantName)
             ->where('status', 'approved')
             ->get();
 
@@ -110,7 +110,7 @@ class RequirementController extends Controller
         }   
 
         // Update the status to 'ownership_issued'
-        Requirement::where('name', $applicantName)
+        Requirement::where('full_name', $applicantName)
             ->where('status', 'approved')
             ->update(['status' => 'ownership_issued']);
 
