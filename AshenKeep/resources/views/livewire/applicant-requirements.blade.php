@@ -21,10 +21,10 @@
                     @endif
 
                     <!-- Loop through grouped requirements -->
-                    @forelse($groupedRequirements->groupBy('name') as $name => $requirements)
+                    @forelse($groupedRequirements->groupBy('full_name') as $full_name => $requirements)
                         <div class="mb-6" x-data="{ open: false }">
                             <button @click="open = !open" class="text-lg font-semibold text-white bg-gray-700 hover:bg-gray-600 transition duration-300 p-3 rounded-lg w-full text-left shadow-md flex justify-between items-center">
-                                <span>{{ $name }}</span>
+                                <span>{{ $full_name }}</span>
                                 <div class="flex items-center gap-x-3">
                                     <span class="font-semibold {{ $requirements->first()->status === 'approved' ? 'text-green-400' : 'text-red-400' }}">
                                         {{ ucfirst($requirements->first()->status) }}
@@ -39,7 +39,7 @@
                             </button>
                             
                             <div x-show="open" class="mt-4 border border-gray-500 rounded-lg overflow-hidden shadow-md">
-                                <table id="table-{{ Str::slug($name) }}" class="table-auto w-full border-collapse">
+                                <table id="table-{{ Str::slug($full_name) }}" class="table-auto w-full border-collapse">
                                     <thead class="bg-gray-800 text-white">
                                         <tr>
                                             <th class="border border-gray-600 px-4 py-3">ID</th>

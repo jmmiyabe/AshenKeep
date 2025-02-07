@@ -11,7 +11,7 @@
                         </div>
                     @endif
 
-                    @foreach($groupedRequirements->groupBy('name') as $applicantName => $requirements)
+                    @foreach($groupedRequirements->groupBy('full_name') as $applicantName => $requirements)
                         <div class="mb-6" x-data="{ open: false }">
                             <button @click="open = !open" class="text-lg font-semibold text-white bg-gray-700 hover:bg-gray-600 transition duration-300 p-3 rounded-lg w-full text-left shadow-md flex justify-between items-center">
                                 <span>{{ $applicantName }}</span>

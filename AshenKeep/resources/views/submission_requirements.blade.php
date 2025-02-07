@@ -6,8 +6,8 @@
             @csrf
 
             <div>
-                <label for="name" class="block text-gray-700">Name</label>
-                <input type="text" name="name" id="name" class="w-full border border-gray-300 rounded px-3 py-2" required>
+                <label for="full_name" class="block text-gray-700">Full Name</label>
+                <input type="text" name="full_name" id="full_name" class="w-full border border-gray-300 rounded px-3 py-2" required>
             </div>
 
             <div>
